@@ -1,1 +1,1 @@
-## это пакет "core" от поставщика "liw"
+## This folder "core" From the supplier "liw"
