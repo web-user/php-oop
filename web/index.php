@@ -6,8 +6,15 @@ require __DIR__ . '/../vendor/liw/core/App.php';
 
 require __DIR__ . '/../app/App.php';
 
+require __DIR__ . '/../app/IDo.php';
 
-//$app = new app\App();
+require __DIR__ . '/../app/Data.php';
+
+require __DIR__ . '/../app/Data2.php';
+
+
+$app = new app\App();
+
 
 use app\App as AppObj;
 
@@ -30,7 +37,7 @@ class TestMy extends AppObj{
 		$this->age;
 	}
 
-	public function instance(){
+	public static function instance(){
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self();
 		}
@@ -47,11 +54,18 @@ class TestMy extends AppObj{
 
 //$obj_return = new TestMy();
 
-function wr_op(){
-	return TestMy::instance();
-}
 
-wr_op();
+//TestMy::instance();
+
+$data1 = new \app\Data();
+$data2 = new \app\Data2();
+
+//var_dump($app->run($data));
+
+$app->run();
+
+
+
 
 
 

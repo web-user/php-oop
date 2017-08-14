@@ -4,8 +4,10 @@ namespace liw\core;
 /**
  * Class App
  */
-class App {
+abstract class App {
 	public $color = 'green';
+
+	const TEXT_USER = 'main';
 
     public function __construct() {
         echo 'Создался новый экземпляр класса из папки "vendor/liw/core/"';
@@ -13,5 +15,11 @@ class App {
 
     public function getColor(){
     	echo $this->color;
+    }
+
+    abstract public function run();
+
+    final public function getFramework(){
+    	return 'Flasky';
     }
 }
