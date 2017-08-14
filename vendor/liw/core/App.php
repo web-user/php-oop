@@ -7,8 +7,6 @@ namespace liw\core;
 abstract class App {
 	public $color = 'green';
 
-	const TEXT_USER = 'main';
-
     public function __construct() {
         echo 'Создался новый экземпляр класса из папки "vendor/liw/core/"';
     }
