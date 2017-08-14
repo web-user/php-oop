@@ -1,7 +1,6 @@
 <?php
+namespace liw\app;
 
-
-namespace app;
 
 
 class Data {

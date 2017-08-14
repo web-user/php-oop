@@ -1,80 +1,21 @@
 <?php
 
+require __DIR__ . '/../vendor/autoload.php';
 
-//require __DIR__ . '/../vendor/liw/core/App.php';
-//
-//require __DIR__ . '/../app/App.php';
-//
-//require __DIR__ . '/../app/IDo.php';
-//
-//require __DIR__ . '/../app/Data.php';
-//
-//require __DIR__ . '/../app/Data2.php';
+$app = new liw\app\App();
 
-function myAutoload($className){
-	$class_pieces = explode('\\', $className);
-	switch ( $class_pieces[0] ){
-		case 'app':
-			require __DIR__ . '/../' . implode(DIRECTORY_SEPARATOR, $class_pieces) . '.php';
-		break;
-		case 'liw':
-			require __DIR__ . '/../vendor/' . implode(DIRECTORY_SEPARATOR, $class_pieces) . '.php';
-		break;
-	}
-}
-
-spl_autoload_register('myAutoload');
-
-$app = new app\App();
-
-
-use app\App as AppObj;
-
-
-
-class TestMy extends AppObj{
-	public $age = 10;
-	/**
-	 * @var null
-	 */
-	public static $_instance = null;
-
-
-
-	public function __construct() {
-		parent::__construct();
-	}
-
-	public function test_unit(){
-		$this->age;
-	}
-
-	public static function instance(){
-		if ( is_null( self::$_instance ) ) {
-			self::$_instance = new self();
-		}
-
-		print_r(self::$_instance);
-
-		return self::$_instance;
-
-	}
-
-
-
-}
 
 //$obj_return = new TestMy();
 
 
 //TestMy::instance();
 
-$data1 = new \app\Data();
-$data2 = new \app\Data2();
-
-//var_dump($app->run($data));
+$data1 = new liw\app\Data();
+$data2 = new liw\app\Data2();
 
 $app->run($data2);
+
+
 
 
 

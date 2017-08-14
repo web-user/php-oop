@@ -1,7 +1,5 @@
 <?php
-
-
-namespace app;
+namespace liw\app;
 
 
 class IDo {

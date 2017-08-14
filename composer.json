@@ -1,0 +1,19 @@
+{
+    "name": "alriore/oop",
+    "description": "lesson",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "web-user",
+            "email": "pva2687@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "liw\\": ""
+        }
+    }
+}
