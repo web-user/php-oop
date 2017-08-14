@@ -23,7 +23,7 @@ class App extends BaseApp {
 	}
 
 	public function run($data = null){
-		echo 'Abstract method';
+		echo $data->get();
 	}
 
 

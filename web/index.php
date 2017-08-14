@@ -1,17 +1,29 @@
 <?php
 
 
-require __DIR__ . '/../vendor/liw/core/App.php';
+//require __DIR__ . '/../vendor/liw/core/App.php';
+//
+//require __DIR__ . '/../app/App.php';
+//
+//require __DIR__ . '/../app/IDo.php';
+//
+//require __DIR__ . '/../app/Data.php';
+//
+//require __DIR__ . '/../app/Data2.php';
 
+function myAutoload($className){
+	$class_pieces = explode('\\', $className);
+	switch ( $class_pieces[0] ){
+		case 'app':
+			require __DIR__ . '/../' . implode(DIRECTORY_SEPARATOR, $class_pieces) . '.php';
+		break;
+		case 'liw':
+			require __DIR__ . '/../vendor/' . implode(DIRECTORY_SEPARATOR, $class_pieces) . '.php';
+		break;
+	}
+}
 
-require __DIR__ . '/../app/App.php';
-
-require __DIR__ . '/../app/IDo.php';
-
-require __DIR__ . '/../app/Data.php';
-
-require __DIR__ . '/../app/Data2.php';
-
+spl_autoload_register('myAutoload');
 
 $app = new app\App();
 
@@ -62,7 +74,7 @@ $data2 = new \app\Data2();
 
 //var_dump($app->run($data));
 
-$app->run();
+$app->run($data2);
 
 
 
