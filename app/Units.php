@@ -14,8 +14,8 @@ class Units {
 	 *
 	 * @return array
 	 */
-	public function battle($attack,$defense, $health, $level ){
-		return array('attack' => $attack, 'defense' => $defense, 'health' => $health, 'level' => $level);
+	public function battle($defense, $health, $level ){
+		return array('attack' => array('random','weakest', 'strongest'), 'defense' => $defense, 'health' => $health, 'level' => $level);
 	}
 
 }
