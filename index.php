@@ -50,13 +50,6 @@ echo $val_res->average($values);
 
 $battle_r->result($players);
 
-$input = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
-
-$website = $input[mt_rand(0, count($input) - 1)];
-
-
-
-echo $website;
 
 
 

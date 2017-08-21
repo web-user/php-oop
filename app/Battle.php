@@ -35,7 +35,7 @@ class Battle {
 	 *
 	 * @return float
 	 */
-	public function AttackSoldiers($health, $experience){
+	protected function AttackSoldiers($health, $experience){
 
 		return  0.5 * (1 + $health/100) * rand(50 + $experience, 100) / 100;
 
@@ -47,7 +47,7 @@ class Battle {
 	 *
 	 * @return float
 	 */
-	public function AttackVehicle($health, $operators){
+	protected function AttackVehicle($health, $operators){
 		return 0.5 * (1 + $health / 100) * $this->average($operators);
 	}
 
@@ -56,7 +56,7 @@ class Battle {
 	 *
 	 * @return mixed
 	 */
-	public function get_type_attack($input){
+	protected function get_type_attack($input){
 		return $input[mt_rand(0, count($input) - 1)];
 	}
 
